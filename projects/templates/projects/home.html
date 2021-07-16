@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,8 @@
     <title>Portfolio</title>
 </head>
 <body>
+    <a href="{% static 'projects/Мордкович 7 класс 2009 задачник.pdf' %}"> Учебник</a>
+    <img src="{% static 'projects/WIN_20210705_18_18_00_Pro.jpg' %}" alt="">
     {% for project in all_projects %}
     <h2>{{project.title}}</h2>
     <h3>{{project.description}}</h3>

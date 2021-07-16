@@ -9,9 +9,9 @@
 <body>
     <h1 align=center>Blog</h1>
     {% for post in all_posts %}
-    <h2>{{ post.title }}</h2>
+    <a href="{% url 'detail' post.id %}"><h2>{{ post.title }}</h2></a>
     <h5>{{ post.dateofpost }}</h5>
-    <h3>{{ post.desc }}</h3><br>
-    {% endfor%}
+    <h3>{{ post.desc|truncatechars:150}}</h3>
+    {%endfor%}
 </body>
 </html>

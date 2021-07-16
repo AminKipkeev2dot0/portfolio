@@ -3,5 +3,6 @@ from django.urls.resolvers import URLPattern
 from . import views
 
 urlpatterns =[
-    path('', views.blogpage, name = 'blogpage')
+    path('', views.blogpage, name = 'blogpage'),
+    path('<int:blog_id>', views.detail, name= 'detail')
 ]
