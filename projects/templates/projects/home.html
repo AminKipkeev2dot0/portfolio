@@ -10,10 +10,12 @@
 <body>
     <a href="{% static 'projects/Мордкович 7 класс 2009 задачник.pdf' %}"> Учебник</a>
     <img src="{% static 'projects/WIN_20210705_18_18_00_Pro.jpg' %}" alt="">
+    <a href="{% url 'blog:blogpage' %}">blog</a>
     {% for project in all_projects %}
     <h2>{{project.title}}</h2>
     <h3>{{project.description}}</h3>
     <img src="{{ project.image.url }}" alt="" width='200' height='150'>
     {% endfor %}
+    
 </body>
 </html>

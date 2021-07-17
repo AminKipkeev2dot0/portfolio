@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 align=center>Blog</h1>
+
+    <h1 align=center>There <b>{{all_posts.count}}Blog{{all_posts.count|pluralize}}</b></h1>
     {% for post in all_posts %}
-    <a href="{% url 'detail' post.id %}"><h2>{{ post.title }}</h2></a>
-    <h5>{{ post.dateofpost }}</h5>
-    <h3>{{ post.desc|truncatechars:150}}</h3>
+    <a href="{% url 'blog:detail' post.id %}"><h2>{{ post.title }}</h2></a>
+    <h5>{{ post.dateofpost|date:'j M Y'|upper}}</h5>
+    <h3>{{ post.desc|striptags|truncatechars:150}}</h3>
     {%endfor%}
 </body>
 </html>

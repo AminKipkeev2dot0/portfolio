@@ -8,7 +8,7 @@
 </head>
 <body>
     {{blog.title}}<br>
-    {{blog.dateofpost}}<br>
-    {{blog.desc}}
+    {{blog.dateofpost|date:'jS M Y'}}<br>
+    {{blog.desc|safe}}
 </body>
 </html>
