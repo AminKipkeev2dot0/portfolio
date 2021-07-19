@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{blog.title}}<br>
-    {{blog.dateofpost|date:'jS M Y'}}<br>
-    {{blog.desc|safe}}
-</body>
-</html>
+{% extends 'projects/base.html' %}
+    {% block 'content' %}
+    <h1 class="det_h1">{{blog.title}}<br></h1>
+    <h2 class="det_h2">{{blog.dateofpost|date:'jS M Y'}}</h2><br>
+    <article class="det_art">
+        {{blog.desc|safe}}
+    </article>
+    <a href="{% url 'blog:blogpage' %}"><div class="back">Back</div></a>
+    {% endblock %}

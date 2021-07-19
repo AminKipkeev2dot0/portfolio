@@ -1,21 +1,48 @@
+{%extends 'projects/base.html'%}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-</head>
-<body>
-    <a href="{% static 'projects/Мордкович 7 класс 2009 задачник.pdf' %}"> Учебник</a>
-    <img src="{% static 'projects/WIN_20210705_18_18_00_Pro.jpg' %}" alt="">
-    <a href="{% url 'blog:blogpage' %}">blog</a>
-    {% for project in all_projects %}
-    <h2>{{project.title}}</h2>
-    <h3>{{project.description}}</h3>
-    <img src="{{ project.image.url }}" alt="" width='200' height='150'>
-    {% endfor %}
-    
-</body>
-</html>
+{% block 'css'%} {% static 'projects/style.css' %}{% endblock %}
+{% block 'content'%}
+      
+    <div class="startimage">
+      <img src="{% static 'projects/jj.jpeg' %}" alt="">
+      <div class="textt">
+        <h1> AMIN KIPKEEV </h1>
+        <span class="main"> Blogger <span class="slash">|</span> Web-developer</span>
+      </div>
+    </div>
+  <section class="projects_sec">
+    <h2 class="proj">Projects</h2>
+    <div class="wrapper">
+      {% for project in all_projects %}
+      <div class="card_h">
+        <h2 class="title">{{project.title}}</h2>
+        <h3 class="desc">{{project.description}}</h3>
+        <img class = "projectim"src="{{ project.image.url }}" alt="" width='200' height='150'>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <section class="blogs_sec">
+    <h2 class="blog">Blogs</h2>
+
+    <div class="wrapper_2">
+      {% for post in all_posts %}
+          <a href="{% url 'blog:detail' post.id %}">
+              <div class="card_h_2">
+                  <div class="blog_h">
+                      <h2>{{ post.title }}</h2>
+                  </div>
+                  <div class="blog_date_h">
+                      <h5>-- {{ post.dateofpost|date:'j M Y'|upper}}--</h5>
+                  </div>
+                  <div class="blog_desc_h">
+                      <h3>{{ post.desc|striptags|truncatechars:300}}<h3>
+                  </div>
+                   
+              </div>
+          </a>
+          {%endfor%}
+      </div> 
+      <a href="{% url 'blog:blogpage' %}" class="back_a"><div class="back">Other blogs</div></a>  
+  </section>   
+{% endblock %}

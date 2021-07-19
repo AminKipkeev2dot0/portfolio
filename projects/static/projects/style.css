@@ -1,0 +1,71 @@
+nav{
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+.logo_a{
+    text-decoration: none;
+    color: rgb(8, 8, 7);
+}
+.logo_text{
+    font-size: 35px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+}
+.links{
+    display: flex;
+    align-items: center ;
+}
+.inst,.resume{
+    color: blue;
+}
+
+.inst,.resume{
+    font-size: 19px;
+    margin-right: 25px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    text-decoration: none;
+}
+.inst:hover{
+    border-bottom: 3px solid rgb(140, 236, 148);
+    transition:0.3s;
+}
+.resume:hover{
+    border-bottom: 3px solid rgb(140, 236, 148);
+    transition:0.3s;
+}
+.btndiv:hover{
+   background-color: rgb(139, 124, 223);
+   color: cornsilk;
+   transition:0.3s;
+}
+
+.blog_btn{
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+.btndiv{
+    width:80px;
+    background-color: rgb(140, 236, 148);
+    border: rgb(140, 236, 148) solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.inst,.resume:active{
+    font-style: bold;
+}
+
+
+
