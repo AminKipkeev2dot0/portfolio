@@ -4,13 +4,14 @@ body{
 }
 
 .startimage{
-    width: 100%;
+    max-width: 100%;
     margin: 0;
     margin-top: 150px;
     background-color: rgb(243, 247, 252);
     display: flex;  
     
 }
+
 .startimage img{
     display: inline;
     border: 6px solid rgb(107, 207, 61);
@@ -95,7 +96,7 @@ body{
     font-weight: 500;
     color: rgb(56, 43, 94);
     padding-top: 110px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     margin-top: 0;
 }
 
@@ -104,7 +105,7 @@ body{
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: rgb(139, 108, 12, 0.4);
+
 }
 
 .card_h_2{
@@ -154,7 +155,6 @@ body{
 
 .back{
     background-color: rgb(181, 214, 252);
-    border: rgb(139, 108, 12) solid;
     border-radius: 15px;
     font-size: 20px;
     font-family: 'Roboto Mono', monospace;
@@ -178,12 +178,3 @@ body{
    color: cornsilk;
    transition:0.3s;
 }
-
-.projects_sec{
-   
-}
-.blogs_sec{
-    
-}
-
-

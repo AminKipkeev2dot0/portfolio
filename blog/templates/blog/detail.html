@@ -1,9 +1,11 @@
 {% extends 'projects/base.html' %}
     {% block 'content' %}
-    <h1 class="det_h1">{{blog.title}}<br></h1>
-    <h2 class="det_h2">{{blog.dateofpost|date:'jS M Y'}}</h2><br>
-    <article class="det_art">
-        {{blog.desc|safe}}
-    </article>
-    <a href="{% url 'blog:blogpage' %}"><div class="back">Back</div></a>
+    <div class="cont">
+        <h1 class="det_h1">{{blog.title}}<br></h1>
+        <h2 class="det_h2">{{blog.dateofpost|date:'jS M Y'}}</h2><br>
+        <article class="det_art">
+            {{blog.desc|safe}}
+        </article>
+        <a href="{% url 'blog:blogpage' %}"><div class="back">Back</div></a>
+    </div>
     {% endblock %}

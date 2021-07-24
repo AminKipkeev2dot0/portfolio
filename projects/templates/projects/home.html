@@ -3,6 +3,7 @@
 {% block 'css'%} {% static 'projects/style.css' %}{% endblock %}
 {% block 'content'%}
       
+  <section class="head">
     <div class="startimage">
       <img src="{% static 'projects/jj.jpeg' %}" alt="">
       <div class="textt">
@@ -10,11 +11,12 @@
         <span class="main"> Blogger <span class="slash">|</span> Web-developer</span>
       </div>
     </div>
+  </section>
   <section class="projects_sec">
-    <h2 class="proj">Projects</h2>
+    <h2 class="proj" data-aos="zoom-out" data-aos-duration="1500">Projects</h2>
     <div class="wrapper">
       {% for project in all_projects %}
-      <div class="card_h">
+      <div class="card_h" data-aos="slide-up" data-aos-duration="1300" >
         <h2 class="title">{{project.title}}</h2>
         <h3 class="desc">{{project.description}}</h3>
         <img class = "projectim"src="{{ project.image.url }}" alt="" width='200' height='150'>
@@ -23,11 +25,10 @@
     </div>
   </section>
   <section class="blogs_sec">
-    <h2 class="blog">Blogs</h2>
-
+    <h2 class="blog" data-aos="fade-in" data-aos-duration="2000">Blogs</h2>
     <div class="wrapper_2">
       {% for post in all_posts %}
-          <a href="{% url 'blog:detail' post.id %}">
+          <a href="{% url 'blog:detail' post.id %}" data-aos="fade-right" data-aos-duration="2000" >
               <div class="card_h_2">
                   <div class="blog_h">
                       <h2>{{ post.title }}</h2>
@@ -38,11 +39,10 @@
                   <div class="blog_desc_h">
                       <h3>{{ post.desc|striptags|truncatechars:300}}<h3>
                   </div>
-                   
               </div>
           </a>
-          {%endfor%}
-      </div> 
+      {%endfor%}
+    </div> 
       <a href="{% url 'blog:blogpage' %}" class="back_a"><div class="back">Other blogs</div></a>  
   </section>   
 {% endblock %}

@@ -4,7 +4,7 @@
         <h1 class="count"><b>{{all_posts.count}} Blog{{all_posts.count|pluralize}} here</b></h1>
         <div class="container">
             {% for post in all_posts %}
-            <a href="{% url 'blog:detail' post.id %}">
+            <a href="{% url 'blog:detail' post.id %}" data-aos="slide-up" data-aos-duration="1300">
                 <div class="card">
                     <div class="blog_a">
                         <h2>{{ post.title }}</h2>
